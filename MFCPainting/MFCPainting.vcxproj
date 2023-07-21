@@ -190,6 +190,7 @@
     <ClInclude Include="CColorCombo.h" />
     <ClInclude Include="DoubleBufferDlg.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="LinearGradientDlg.h" />
     <ClInclude Include="MFCColor.h" />
     <ClInclude Include="MFCPainting.h" />
     <ClInclude Include="MFCPaintingDlg.h" />
@@ -202,6 +203,7 @@
   <ItemGroup>
     <ClCompile Include="CColorCombo.cpp" />
     <ClCompile Include="DoubleBufferDlg.cpp" />
+    <ClCompile Include="LinearGradientDlg.cpp" />
     <ClCompile Include="MFCColor.cpp" />
     <ClCompile Include="MFCPainting.cpp" />
     <ClCompile Include="MFCPaintingDlg.cpp" />

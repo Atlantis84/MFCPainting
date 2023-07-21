@@ -10,6 +10,8 @@ class TextureBrushDlg : public CDialogEx
 public:
 	TextureBrushDlg(CWnd* pParent = nullptr);   // 标准构造函数
 	virtual ~TextureBrushDlg();
+	WrapMode m_pCurrentWrapMode;
+	CComboBox m_pStyle;
 
 // 对话框数据
 #ifdef AFX_DESIGN_TIME
@@ -22,4 +24,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnPaint();
+	virtual BOOL OnInitDialog();
+	afx_msg void OnSelchangeCombo1();
 };

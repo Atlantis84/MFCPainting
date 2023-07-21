@@ -9,6 +9,8 @@
 #define IDD_DOUBLEBUFFER                135
 #define IDD_DIALOG1                     137
 #define IDD_TBDLG                       137
+#define IDD_DIALOG2                     139
+#define IDD_LINEARGRADIENTDLG           139
 #define IDC_COMBO1                      1002
 #define IDC_COMBO_FORECOLOR             1005
 #define IDC_COMBO_BACKCOLOR             1006
@@ -17,7 +19,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        139
+#define _APS_NEXT_RESOURCE_VALUE        141
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1007
 #define _APS_NEXT_SYMED_VALUE           101

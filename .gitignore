@@ -1,3 +1,6 @@
 #gitignore
 /Debug
 /MFCPainting/Debug
+/.vs
+/x64
+/MFCPainting/x64

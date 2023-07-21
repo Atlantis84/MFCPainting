@@ -10,6 +10,7 @@
 #include "PenTest.h"
 #include "DoubleBufferDlg.h"
 #include "TextureBrushDlg.h"
+#include "LinearGradientDlg.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -84,7 +85,8 @@ BOOL CMFCPaintingApp::InitInstance()
 	//MFCColor dlg;
 	//PenTest dlg;
 	//DoubleBufferDlg dlg;
-	TextureBrushDlg dlg;
+	//TextureBrushDlg dlg;
+	LinearGradientDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)

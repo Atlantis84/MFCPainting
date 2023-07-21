@@ -11,9 +11,9 @@
 #include "resource.h"		// 主符号
 
 /**********************GDI预定义****************************/
-#ifndef ULONG_PTR
-#define ULONG_PTR unsigned long
-#endif
+//#ifndef ULONG_PTR
+//#define ULONG_PTR unsigned long
+//#endif
 #include "GdiPlus.h"
 using namespace Gdiplus;
 #pragma comment(lib,"GdiPlus.lib")
