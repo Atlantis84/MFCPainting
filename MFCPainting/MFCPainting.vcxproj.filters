@@ -51,6 +51,12 @@
     <ClInclude Include="LinearGradientDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="LinearGradientExOneDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="LinearGradientTwoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MFCPainting.cpp">
@@ -78,6 +84,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LinearGradientDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearGradientExOneDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearGradientTwoDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

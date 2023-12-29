@@ -47,8 +47,8 @@ BOOL CMFCPaintingDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 	//ShowWindow(SW_SHOWMAXIMIZED);
 	// TODO: 在此添加额外的初始化代码
-	//SetWindowPos(NULL, 100, 100, 1600, 800, SWP_NOZORDER);
-	SetTimer(1, 50, NULL);
+	SetWindowPos(NULL, 100, 100, 600, 400, SWP_NOZORDER);
+	//SetTimer(1, 50, NULL);
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
@@ -60,23 +60,46 @@ void CMFCPaintingDlg::OnPaint()
 {
 	CPaintDC dc(this);
 	Graphics graphics(dc);
-	graphics.SetSmoothingMode(SmoothingModeHighQuality);
-	value += 5;
-	DrawTJGraph(graphics, value);
+	/*value += 5;
+	DrawTJGraph(graphics, value);*/
+	DrawBasics(graphics);
 	CDialogEx::OnPaint();
 }
 
 void CMFCPaintingDlg::DrawBasics(Graphics & graphics)
 {
-	graphics.SetSmoothingMode(Gdiplus::SmoothingMode::SmoothingModeAntiAlias);
-	GraphicsPath pa;
-	pa.AddEllipse(500, 300, 100, 100);
-	Region rg(Rect(500,300,100,100));
-	rg.Exclude(&pa);
-	graphics.FillRegion(&SolidBrush(Color(255, 0, 0)), &rg);
-	return;
+	//graphics.SetSmoothingMode(Gdiplus::SmoothingMode::SmoothingModeHighQuality);
 	CRect rt;
 	GetClientRect(&rt);
+	RectF rtt(rt.left, rt.top, rt.Width(), rt.Height());
+	graphics.FillRectangle(&SolidBrush(Color(255, 255, 255)), rtt);
+#if 0 //路径叠加
+	GraphicsPath pa;
+	pa.AddEllipse(0, 0, rt.Width(), rt.Height());
+	Region rg(Rect(0, 0, rt.Width(), rt.Height()));
+	rg.Exclude(&pa);
+	graphics.FillRegion(&SolidBrush(Color(255, 0, 0)), &rg);
+
+	GraphicsPath pa;
+	pa.AddRectangle(Rect(0, 0, rt.Width(), rt.Height()));
+	pa.AddEllipse(Rect(0, 0, rt.Width(), rt.Height()));
+	graphics.FillPath(&SolidBrush(Color(255, 0, 0)), &pa);
+	return;
+#endif
+
+	//字符串测量
+	WCHAR string[] = L"上善若水";
+	Gdiplus::Font ft(L"KaiTi", 70);
+	RectF layoutRect(10.0f, 10.0f, 200.0f, 330.0f);
+	StringFormat strF;
+	strF.SetAlignment(StringAlignmentFar);
+	RectF boundRect;
+	graphics.DrawRectangle(&Pen(Color(255, 0, 0)), layoutRect);
+	graphics.MeasureString(string, 4, &ft, layoutRect, &strF, &boundRect);
+	graphics.DrawString(string, 4, &ft, boundRect, &strF, &SolidBrush(Color(0, 255, 0)));
+	graphics.DrawRectangle(&Pen(Color(0, 0, 255)), boundRect);
+	return;
+
 	//画点
 	graphics.DrawEllipse(&Pen(Color(255, 0, 0)), 50, 50, 1, 1);
 	//单线
@@ -96,6 +119,7 @@ void CMFCPaintingDlg::DrawBasics(Graphics & graphics)
 	Rect rect1(350, 180, 100, 100);
 	graphics.DrawRectangle(&Pen(Color(0, 255, 0), 2), rect1);
 	graphics.FillEllipse(&SolidBrush(Color(255, 255, 0)), rect1);
+	graphics.DrawEllipse(&Pen(Color(255, 0, 0)), rect1);
 	// 画曲线及封闭曲线
 	Pen greenPen(Color::Green, 3);
 	PointF point11(450.0f, 130.0f), point12(550.0f, 80.0f),point13(650.0f, 40.0f),point14(750.0f, 130.0f);

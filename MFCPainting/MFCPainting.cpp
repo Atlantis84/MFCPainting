@@ -11,6 +11,8 @@
 #include "DoubleBufferDlg.h"
 #include "TextureBrushDlg.h"
 #include "LinearGradientDlg.h"
+#include "LinearGradientExOneDlg.h"
+#include "LinearGradientTwoDlg.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -81,12 +83,14 @@ BOOL CMFCPaintingApp::InitInstance()
 	// 例如修改为公司或组织名
 	SetRegistryKey(_T("应用程序向导生成的本地应用程序"));
 
-	//CMFCPaintingDlg dlg;
+	CMFCPaintingDlg dlg;
 	//MFCColor dlg;
 	//PenTest dlg;
 	//DoubleBufferDlg dlg;
 	//TextureBrushDlg dlg;
-	LinearGradientDlg dlg;
+	//LinearGradientDlg dlg;
+	//LinearGradientExOneDlg dlg;
+	//LinearGradientTwoDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
